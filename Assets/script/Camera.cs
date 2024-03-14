@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks;
 using System.IO;
+using UnityEngine.EventSystems;
 
 public class Camera : MonoBehaviour
 {
     // カメラの映像を映す
     public RawImage rawImage;
     WebCamTexture webCamTexture;
+    public GameObject Scene;
 
     // Start is called before the first frame update
     void Start()
@@ -25,30 +27,45 @@ public class Camera : MonoBehaviour
     {
         await Task.Delay(3000);
         webCamTexture.Pause();
+        this.GetComponent<SceneChange>().OnLoadPicture();
         save();
-        await Task.Delay(3000);
-        webCamTexture.Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void save()
     {
         // Texture2Dを新規作成
-        Texture2D texture = new Texture2D(webCamTexture.width, webCamTexture.height, TextureFormat.ARGB32, false);
+        Texture2D outputTexture = new Texture2D(webCamTexture.width, webCamTexture.height, TextureFormat.ARGB32, false);
+        
+
         // カメラのピクセルデータを設定
-        Color[] colors = webCamTexture.GetPixels();
-        texture.SetPixels(colors);
+        // Color[] colors = webCamTexture.GetPixels();
+        // texture.SetPixels(colors);
         // TextureをApply
-        texture.Apply();
+        // texture.Apply();
+
+        Color[] inputColors = webCamTexture.GetPixels();
+        Color[] outputColors = new Color[webCamTexture.width * webCamTexture.height];
+        for (int y = 0; y < webCamTexture.height; y++)
+        {
+            for (int x = 0; x < webCamTexture.width; x++)
+            {
+                var color = inputColors[(webCamTexture.width * y) + x];
+                float average = (color.r + color.g + color.b) / 3;
+                outputColors[(webCamTexture.width * y) + x] = new Color(average, average, average);
+            }
+        }
+        outputTexture.SetPixels(outputColors);
+        outputTexture.Apply();
+
+        rawImage.texture = outputTexture;
+
+
+
 
         // Encode
-        byte[] bin = texture.EncodeToJPG();
+        byte[] bin = outputTexture.EncodeToJPG();
         // Encodeが終わったら削除
-        Object.Destroy(texture);
+        // Object.Destroy(outputTexture);
 
         // ファイルを保存
     #if UNITY_ANDROID
@@ -58,4 +75,6 @@ public class Camera : MonoBehaviour
         Debug.Log("画像書き込んだよ");
 
     }
+
+
 }

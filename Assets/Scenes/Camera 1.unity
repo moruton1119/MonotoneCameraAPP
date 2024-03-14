@@ -389,6 +389,9 @@ GameObject:
   - component: {fileID: 1170444642}
   - component: {fileID: 1170444641}
   - component: {fileID: 1170444640}
+  - component: {fileID: 1170444646}
+  - component: {fileID: 1170444645}
+  - component: {fileID: 1170444644}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -480,6 +483,48 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1170444644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170444639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff95d1209496a540a37d424ab92e831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scene1: Preview
+  Scene2: Camera 1
+  Scene3: 
+--- !u!114 &1170444645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170444639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773822c7a10ab164694f78d729b11fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+--- !u!114 &1170444646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170444639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458c46b6114791a45b859ad7ff0a6829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 1916775762}
+  Scene: {fileID: 1170444639}
 --- !u!1 &1437837592
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +687,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1916775761}
+      - m_Target: {fileID: 1170444646}
         m_TargetAssemblyTypeName: Camera, Assembly-CSharp
         m_MethodName: Shutter
         m_Mode: 1
@@ -703,7 +748,6 @@ GameObject:
   - component: {fileID: 1916775760}
   - component: {fileID: 1916775763}
   - component: {fileID: 1916775762}
-  - component: {fileID: 1916775761}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -730,19 +774,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1916775761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916775759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458c46b6114791a45b859ad7ff0a6829, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rawImage: {fileID: 1916775762}
 --- !u!114 &1916775762
 MonoBehaviour:
   m_ObjectHideFlags: 0
