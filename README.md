@@ -13,3 +13,8 @@ ARカメラを使う方法もあるみたいだけど一旦 WebCamTextureを使�
 2、Monotone加工をする
 3、UIの実装、デザイン、カウントダウン含め
 4、android対応（MacがないのでiPhoneは実機で確認できない）
+
+
+3/15
+android端末に画像を保存する為外部アセット導入
+https://github.com/yasirkula/UnityNativeGallery
