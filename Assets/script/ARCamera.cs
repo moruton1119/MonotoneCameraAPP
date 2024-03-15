@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System;
-using System.Collections.Generic;
 using UnityEngine.XR.ARFoundation;
 
 public class ARCamera : MonoBehaviour
@@ -27,12 +26,13 @@ public class ARCamera : MonoBehaviour
 
     public void shutter()
     {
+        RenderTexture renderTexture = new RenderTexture(Screen.width, Screen.height, 24);
         // Texture2Dを新規作成
         outputTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.ARGB32, false);
-        Graphics.Blit(outputTexture, arCamBg.material);
+        Graphics.Blit(null, renderTexture, arCamBg.material);
 
     // レンダリングされた画像を RenderTexture から Texture2D にコピーする
-        // GetCapturedTexture();
+        GetCapturedTexture();
     // モノトーン処理を行いJPGで保存する
         save();
     }
@@ -45,7 +45,7 @@ public class ARCamera : MonoBehaviour
     public Texture2D GetCapturedTexture()
     {
         // レンダリングされた画像を RenderTexture から Texture2D にコピーする
-        RenderTexture.active = renderTexture;
+        // RenderTexture.active = renderTexture;
         capturedTexture = new Texture2D(Screen.width, Screen.height);
         capturedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
         capturedTexture.Apply();
@@ -54,8 +54,9 @@ public class ARCamera : MonoBehaviour
     }
     public void save()
     {
+        Texture2D C_data = capturedTexture;
         // カメラのピクセルデータを設定
-        Color[] inputColors = outputTexture.GetPixels();
+        Color[] inputColors = C_data.GetPixels();
         Color[] outputColors = new Color[Screen.width * Screen.height];
         // //モノクロ処理
         for (int y = 0; y < Screen.height; y++)
@@ -96,4 +97,5 @@ public class ARCamera : MonoBehaviour
         Debug.Log("画像書き込んだよ");
 
     }
+
 }
