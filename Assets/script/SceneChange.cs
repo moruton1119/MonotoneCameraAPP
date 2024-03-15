@@ -9,11 +9,11 @@ public class SceneChange : MonoBehaviour
     public string Scene2;
     public string Scene3;
 
-    public void OnLoadPicture()
+    public void OnLoadScene1()
     {
         SceneManager.LoadScene(Scene1);
     }
-    public void OnLoadCamera()
+    public void OnLoadScene2()
     {
         SceneManager.LoadScene(Scene2);
     }

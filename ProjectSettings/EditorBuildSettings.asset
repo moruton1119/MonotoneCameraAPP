@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Preview.unity
     guid: 759ae97d2cfb4c148823b9d36ff03979
+  - enabled: 1
+    path: Assets/Scenes/Preview(AR).unity
+    guid: eea3e23a86c91d14b945e92bd281936a
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: df861c0783954d84d85a366497a7f5f3, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: e7c37cf746877254cb55c556900b1437, type: 2}
@@ -21,3 +24,4 @@ EditorBuildSettings:
     com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: b2e8d35385e080d43abc2087fd0aec12, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 79d02b26291934547beaf5c55d399f02, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 0f497155f45fa36499a17b9c10806aea, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: b59eb9ca57f251d4986c5c19e0b6f38d, type: 2}
