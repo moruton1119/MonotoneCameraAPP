@@ -86,10 +86,10 @@ public class ARCamera : MonoBehaviour
         // ファイルを保存
     #if UNITY_ANDROID
         
+        NativeGallery.SaveImageToGallery(outputTexture, "MonotoneCamera", "test.jpg");
 
 
-        
-        Debug.Log(filePath+"に画像書き込んだよ");
+        Debug.Log("android画像書き込んだよ");
 
     #endif
         File.WriteAllBytes(Application.dataPath + "/test.jpg", bin);
