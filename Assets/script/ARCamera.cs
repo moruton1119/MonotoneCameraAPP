@@ -28,7 +28,7 @@ public class ARCamera : MonoBehaviour
 
         
     // モノトーン処理を行いJPGで保存する
-        pD.save();
+        pD.monotone();
     //結果をプレビューするシーンに移動
         sC.OnLoadScene1();
     }
