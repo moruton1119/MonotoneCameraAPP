@@ -11,7 +11,7 @@ public class ARPreview : MonoBehaviour
     void Start()
     {
         PictureData PD = FindObjectOfType<PictureData>();
-        Texture2D cTex = PictureData.outputTexture;
+        Texture2D cTex = PictureData.previewTex;
         cImg.texture = cTex;
     }
 
