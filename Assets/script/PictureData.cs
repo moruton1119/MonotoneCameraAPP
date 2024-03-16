@@ -6,7 +6,8 @@ using System.IO;
 public class PictureData : MonoBehaviour
 {
     public static PictureData instance;
-    public static Texture2D outputTexture;
+    public Texture2D outputTex;
+    public static Texture2D previewTex;
 
     void Awake()
     {
@@ -34,7 +35,7 @@ public class PictureData : MonoBehaviour
     {
 
         Texture2D C_data = CameraImageExample.saveTex;
-        outputTexture = new Texture2D(C_data.width, C_data.height, TextureFormat.ARGB32, false);
+        outputTex = new Texture2D(C_data.width, C_data.height, TextureFormat.ARGB32, false);
         // カメラのピクセルデータを設定
         Color[] inputColors = C_data.GetPixels();
         Color[] outputColors = new Color[C_data.width * C_data.height];
@@ -48,25 +49,31 @@ public class PictureData : MonoBehaviour
                 outputColors[(C_data.width * y) + x] = new Color(average, average, average);
             }
         }
-        outputTexture.SetPixels(outputColors);
-        outputTexture.Apply();
+        outputTex.SetPixels(outputColors);
+        outputTex.Apply();
+
+        //色々やろうとした名残
+        previewTex = outputTex;
 
         // Encode
-        byte[] bin = outputTexture.EncodeToJPG();
+        byte[] bin = outputTex.EncodeToJPG();
         // Encodeが終わったら削除
-        // Object.Destroy(outputTexture);
+        // Object.Destroy(outputTex);
 
         // ファイルを保存
     #if UNITY_ANDROID
         
-        NativeGallery.SaveImageToGallery(outputTexture, "MonotoneCamera", "test.jpg");
+        NativeGallery.SaveImageToGallery(outputTex, "MonotoneCamera", "test.jpg");
 
 
         Debug.Log("android画像書き込んだよ");
 
-    #endif
+    #else
         File.WriteAllBytes(Application.dataPath + "/test.jpg", bin);
-        Debug.Log("画像書き込んだよ");
+        Debug.Log("PC画像書き込んだよ");
+
+    #endif 
+        Debug.Log("処理完了");
 
     }  
 

@@ -21,10 +21,16 @@ public class ARCamera : MonoBehaviour
 
     public void shutter()
     {
-        PictureData PD = FindObjectOfType<PictureData>();
+        PictureData pD = FindObjectOfType<PictureData>();
+        SceneChange sC = FindObjectOfType<SceneChange>();
+
+    //ここに3秒のカウントを行う処理を書く
+
         
     // モノトーン処理を行いJPGで保存する
-        PD.save();
+        pD.save();
+    //結果をプレビューするシーンに移動
+        sC.OnLoadScene1();
     }
 
 }
