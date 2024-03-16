@@ -31,7 +31,7 @@ public class PictureData : MonoBehaviour
         { 
         }
 
-    public void save()
+    public void monotone()
     {
 
         Texture2D C_data = CameraImageExample.saveTex;
@@ -55,25 +55,25 @@ public class PictureData : MonoBehaviour
         //色々やろうとした名残
         previewTex = outputTex;
 
-        // Encode
-        byte[] bin = outputTex.EncodeToJPG();
-        // Encodeが終わったら削除
-        // Object.Destroy(outputTex);
+    //     // Encode
+    //     byte[] bin = outputTex.EncodeToJPG();
+    //     // Encodeが終わったら削除
+    //     // Object.Destroy(outputTex);
 
-        // ファイルを保存
-    #if UNITY_ANDROID
+    //     // ファイルを保存
+    // #if UNITY_ANDROID
         
-        NativeGallery.SaveImageToGallery(outputTex, "MonotoneCamera", "test.jpg");
+    //     NativeGallery.SaveImageToGallery(outputTex, "MonotoneCamera", "test.jpg");
 
 
-        Debug.Log("android画像書き込んだよ");
+    //     Debug.Log("android画像書き込んだよ");
 
-    #else
-        File.WriteAllBytes(Application.dataPath + "/test.jpg", bin);
-        Debug.Log("PC画像書き込んだよ");
+    // #else
+    //     File.WriteAllBytes(Application.dataPath + "/test.jpg", bin);
+    //     Debug.Log("PC画像書き込んだよ");
 
-    #endif 
-        Debug.Log("処理完了");
+    // #endif 
+    //     Debug.Log("処理完了");
 
     }  
 
