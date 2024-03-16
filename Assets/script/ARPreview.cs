@@ -9,6 +9,7 @@ public class ARPreview : MonoBehaviour
     // public Texture2D cTex;
     public RawImage cImg;
     private Texture2D cTex;
+    public Text sT;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,7 @@ public class ARPreview : MonoBehaviour
     {
         GameObject sB = GameObject.Find("Save");
         sB.SetActive(false);
+        sT.text = "保存しました。";
         // ファイルを保存
     #if UNITY_ANDROID
         
