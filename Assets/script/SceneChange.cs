@@ -7,7 +7,7 @@ public class SceneChange : MonoBehaviour
 {
     public string Scene1;
     public string Scene2;
-    public string Scene3;
+    // public string Scene3;
 
     public void OnLoadScene1()
     {
