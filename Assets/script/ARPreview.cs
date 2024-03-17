@@ -35,7 +35,7 @@ public class ARPreview : MonoBehaviour
         sC.OnLoadScene1();
     }
 
-    public void save()
+    public void Save()
     {
         GameObject sB = GameObject.Find("Save");
         sB.SetActive(false);

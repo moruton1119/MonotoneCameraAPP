@@ -31,7 +31,7 @@ public class PictureData : MonoBehaviour
         { 
         }
 
-    public void monotone()
+    public void Monotone()
     {
 
         Texture2D C_data = CameraImageExample.saveTex;

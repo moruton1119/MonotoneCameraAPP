@@ -42,7 +42,7 @@ public class ARCamera : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         // モノトーン処理を行う
-        pD.monotone();
+        pD.Monotone();
         //結果をプレビューするシーンに移動
         sC.OnLoadScene1();
     }
