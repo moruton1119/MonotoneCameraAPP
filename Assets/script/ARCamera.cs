@@ -9,6 +9,8 @@ using UnityEngine.XR.ARFoundation;
 public class ARCamera : MonoBehaviour
 {
     public Text countdown;
+    public int counts;
+    public GameObject shutterimage;
 
     void Start()
     {
@@ -30,17 +32,14 @@ public class ARCamera : MonoBehaviour
         PictureData pD = FindObjectOfType<PictureData>();
         SceneChange sC = FindObjectOfType<SceneChange>();
 
-        //ここに3秒のカウントを行う処理を書く
-        //愚直な実装感否めない・・・
-
+        // //愚直な実装感否めない・・・
         // 3秒間待つ
-        countdown.text = "3";
-        yield return new WaitForSeconds(1);
-        countdown.text = "2";
-        yield return new WaitForSeconds(1);
-        countdown.text = "1";
-        yield return new WaitForSeconds(1);
-
+        for(int x=counts; x>=1 ; --x)
+        {
+            countdown.text = x.ToString();
+            yield return new WaitForSeconds(1);
+        }
+        shutterimage.SetActive(true);
         // モノトーン処理を行う
         pD.Monotone();
         //結果をプレビューするシーンに移動
