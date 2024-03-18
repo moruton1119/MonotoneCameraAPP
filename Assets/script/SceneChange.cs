@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    //シーン変更のためのscript
     public string Scene1;
     public string Scene2;
-    public string Scene3;
 
     public void OnLoadScene1()
     {
