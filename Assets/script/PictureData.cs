@@ -13,6 +13,7 @@ public class PictureData : MonoBehaviour
 
     //モノクロ画像保存用
     public static Texture2D previewTex;
+    public AudioSource shuttersound;
 
     //Sceneにひとつのみ存在し破棄されないオブジェクト化するメソッド
     void Awake()
@@ -38,6 +39,11 @@ public class PictureData : MonoBehaviour
     void Update()
         { 
         }
+    //シャッターの音を鳴らす
+    public void Shuttersound()
+    {
+        shuttersound.Play();
+    }
 
     //モノトーン処理を行う
     public void Monotone()

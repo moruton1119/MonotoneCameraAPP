@@ -13,6 +13,7 @@ public class ARCamera : MonoBehaviour
     public Text countdown;
     public int counts;
     public GameObject shutterimage;
+    public AudioSource shuttercounts;
 
     void Start()
     {
@@ -41,12 +42,15 @@ public class ARCamera : MonoBehaviour
         for(int x=counts; x>=1 ; --x)
         {
             countdown.text = x.ToString();
+            shuttercounts.Play();
             yield return new WaitForSeconds(1);
         }
-        //シャッターを切るときのフラッシュ表現
-        shutterimage.SetActive(true);
+        //シャッター音
+        pD.Shuttersound();
         // モノトーン処理を行う
         pD.Monotone();
+        //シャッターを切るときのフラッシュ表現
+        shutterimage.SetActive(true);
         //結果をプレビューするシーンに移動
         sC.OnLoadScene1();
     }
