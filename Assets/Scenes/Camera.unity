@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outputTex: {fileID: 0}
+  arCamera: {fileID: 143306334}
 --- !u!4 &55135812
 Transform:
   m_ObjectHideFlags: 0

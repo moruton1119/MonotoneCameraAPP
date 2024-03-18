@@ -26,6 +26,7 @@ public class PictureData : MonoBehaviour
     void Start()
     {
         CameraImageExample CIE  = FindObjectOfType<CameraImageExample>();
+        
     }
     void Update()
         { 
@@ -33,8 +34,8 @@ public class PictureData : MonoBehaviour
 
     public void Monotone()
     {
-
         Texture2D C_data = CameraImageExample.saveTex;
+
         outputTex = new Texture2D(C_data.width, C_data.height, TextureFormat.ARGB32, false);
         // カメラのピクセルデータを設定
         Color[] inputColors = C_data.GetPixels();
@@ -49,6 +50,9 @@ public class PictureData : MonoBehaviour
                 outputColors[(C_data.width * y) + x] = new Color(average, average, average);
             }
         }
+        Debug.Log(C_data.width);
+        Debug.Log(C_data.height);
+
         outputTex.SetPixels(outputColors);
         outputTex.Apply();
 

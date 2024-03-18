@@ -8,6 +8,7 @@ public class ARPreview : MonoBehaviour
 {
     // public Texture2D cTex;
     public RawImage cImg;
+    public AspectRatioFitter aRF;
     private Texture2D cTex;
     public Text sT;
     // Start is called before the first frame update
@@ -15,7 +16,19 @@ public class ARPreview : MonoBehaviour
     {
         PictureData PD = FindObjectOfType<PictureData>();
         cTex = PictureData.previewTex;
-        cImg.texture = cTex;
+        //縦持ちの場合
+        // aRF.aspectMode = AspectRatioFitter.AspectMode.HeightControlsWidth;
+
+        //横持ちの場合
+        // aRF.aspectMode = AspectRatioFitter.AspectMode.WidthControlsHeight;
+
+        // AspectRatioFitterの設定
+        aRF.aspectRatio = (float)cTex.width / cTex.height;
+        Debug.Log(aRF.aspectRatio);
+        // RawImageに撮影したモノクロ写真のテクスチャを渡す
+        cImg.texture = cTex; 
+
+
     }
 
     // Update is called once per frame
