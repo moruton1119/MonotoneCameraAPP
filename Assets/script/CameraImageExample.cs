@@ -9,6 +9,7 @@ public class CameraImageExample : MonoBehaviour
 {
 
     //Unity公式のやり方そのまま使っています。
+    
     private Texture2D tempBuffer = null;
     private Texture2D m_Texture = null;
     public Texture2D CurrentArImage => m_Texture;
