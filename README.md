@@ -22,3 +22,7 @@ https://stock.adobe.com/jp/491199131
 OtoLogic
 
 https://otologic.jp/
+
+動作環境想定　android
+
+実機での確認はpixel5のみ
