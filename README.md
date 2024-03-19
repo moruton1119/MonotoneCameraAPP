@@ -26,3 +26,6 @@ https://otologic.jp/
 動作環境想定　android
 
 実機での確認はpixel5のみ
+
+APK DL
+https://drive.google.com/file/d/19JfO79RLblfHpBfbc4diQeFwynKKsNKX/view?usp=sharing
