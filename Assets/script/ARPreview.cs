@@ -6,8 +6,8 @@ using System.IO;
 
 public class ARPreview : MonoBehaviour
 {
-    //画損の保存、カメラのsceneに戻る処理
-
+    //画像の保存、カメラのsceneに戻る処理
+    //デバイスの回転制御
     public RawImage cImg;
     public AspectRatioFitter aRF;
     private Texture2D cTex;

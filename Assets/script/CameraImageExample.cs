@@ -9,7 +9,8 @@ public class CameraImageExample : MonoBehaviour
 {
 
     //Unity公式のやり方そのまま使っています。
-    
+    //回転処理は以下のURL参考にしました。
+    //https://qiita.com/Cova8bitdot/items/3da225c27726e2d7520e
     private Texture2D tempBuffer = null;
     private Texture2D m_Texture = null;
     public Texture2D CurrentArImage => m_Texture;
