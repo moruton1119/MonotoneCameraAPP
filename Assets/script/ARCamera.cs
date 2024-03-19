@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System;
-using UnityEngine.XR.ARFoundation;
 
 public class ARCamera : MonoBehaviour
 {
