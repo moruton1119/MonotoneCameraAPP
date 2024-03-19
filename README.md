@@ -2,3 +2,7 @@
 
 android端末に画像を保存する為外部アセット導入
 https://github.com/yasirkula/UnityNativeGallery
+
+使用音源クレジット
+OtoLogic
+https://otologic.jp/
